@@ -11,3 +11,22 @@ const taglines = [ //Toutes les taglines pour le carrousel
 
 	'Autocollants <span>avec découpe laser sur mesure</span>'
 ]
+
+let slideIndex = 1; //slide de commencer
+
+slidesActive(slideIndex);
+
+let precedent = document.querySelector('#precedent');
+let suivant = document.querySelector('#suivant');
+
+suivant.addEventListener('click', function () {
+	plusSlides(1); // Incrémente l'index pour afficher la diapositive suivante
+});
+
+precedent.addEventListener('click', function () {
+	plusSlides(-1); // Décrémente l'index pour afficher la diapositive précédente
+});
+
+function plusSlides(n) {
+	slidesActive(slideIndex += n);
+}
